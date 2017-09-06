@@ -9,7 +9,11 @@ import Foundation
 open class SVGView: MacawView {
   
   fileprivate let rootNode = Group()
-  fileprivate var svgNode: Node?
+    open var svgNode: Node? {
+        didSet {
+            render()
+        }
+    }
   
   @IBInspectable open var fileName: String? {
     didSet {
